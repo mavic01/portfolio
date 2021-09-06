@@ -1,0 +1,21 @@
+.app {
+    height: 100vh;
+    .sections {
+        width: 100%;
+        height: calc(100vh - 120px); /*cos 70px is for a fixed topbar height*/
+        position: relative;
+        top: 60px; /*so it starts from where the topbar starts ie. not goin under the topbar and creatin space under*/
+        bottom: 60px;
+        scroll-behavior: smooth; /*to let the ids lead u to sections smoothly*/
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none; /*removes the scrollbar for firefox*/
+        &::-webkit-scrollbar{
+            display: none; /*for other browsers*/
+        }
+        > *{
+            width: 100vw;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start;
+        } /* > * - for each element inside*/
+    }
+}

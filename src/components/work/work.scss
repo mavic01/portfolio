@@ -1,0 +1,142 @@
+@import "../../global.scss";
+
+.work {
+    background-color: #f56991;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /*bcos we're gonna use absolute positioning(not within the confice of its parent) for these arrows*/
+
+    .arrow {
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        @include mobile {
+            display: none;
+        }
+        &.left {
+            left: 100px;
+            transform: rotateY(180deg);
+            cursor: pointer;
+        }
+        &.right {
+            right: 100px;
+
+        }
+    }
+
+    .slider{
+        height: 350px;
+        display: flex;
+        position: absolute;
+        left: 0; /*0 here will show the first, -100vw the second slide and -200vw the third*/
+        transition: all 1s ease-out;
+        @include mobile {
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .item {
+                width: 700px;
+                height: 100%;
+                background-color: #fff;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include mobile {
+                    width: 67%;
+                    height: 90px;
+                    margin: 8px 0;
+                }
+
+                .left {
+                    flex: 4; /*spliting the container into 12px and 4 of them wil be left*/
+                    height: 80%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // @include mobile {
+                    //     height: 100%;
+                       
+                    // }
+
+                    .leftContainer {
+                        width: 90%;
+                        height: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        
+                            // @include mobile {
+                            //     width: 100%;
+                            //     height: 100%;
+                            // }
+                            
+
+                        .imgContainer{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: rgb(247, 146, 109);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            @include mobile {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            img {
+                                width: 25px;
+                                @include mobile {
+                                    width: 15px;
+                                }
+                            }
+                        }
+                        h2 {
+                            font-size: 20px;
+                            @include mobile {
+                                font-size: 12px;
+                            }
+
+                        }
+                        p {
+                            font-size: 13px;
+                            @include mobile {
+                                display: none;
+                            }
+
+                        }
+                        span {
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+                .right {
+                    flex: 8; /*spliting the container into 12px and 8 of them wil be left*/
+                    height: 100%;
+                    // background-color: darkgreen;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    img {
+                        width: 400px;
+                        transform: rotate(-10deg);
+}
+                }
+}
+    }
+    
+}}
